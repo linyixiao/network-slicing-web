@@ -9,7 +9,31 @@ function jsonFormatter(value, row, index) {
     return JSON.stringify(value);
 }
 
-
+//传值解析
+//接收一个值
+function oneValues(){
+    var result;
+    var url=window.location.search; //获取url中"?"符后的字串
+    if(url.indexOf("?")!=-1){
+        result = url.substr(url.indexOf("=")+1);
+    }
+    return result;
+}
+//接收多值
+function manyValues(){
+    var url=window.location.search;
+    if(url.indexOf("?")!=-1){
+        var str = url.substr(1);
+        strs = str.split("&");
+        var key=new Array(strs.length);
+        var value=new Array(strs.length);
+        for(i=0;i<strs.length;i++){
+            key[i]=strs[i].split("=")[0]
+            value[i]=unescape(strs[i].split("=")[1]);
+            alert(key[i]+"="+value[i]);
+        }
+    }
+}
 
 // 触发模态框的按钮
 window.operateEvents = {
@@ -27,21 +51,23 @@ window.operateEvents = {
     },
     'click .RoleOfSeeSwitchDetail': function (e, value, row, index) {
         alert(JSON.stringify(row))
+        // window.location.href="switchDetail.html?switchId="+row.dpid
     }
 };
 
 
 // operateFormatter
 function operateFormatter_switchDetail(value, row, index) {
+    var switchId = row.dpid;
     return [
-        '<a href="switchDetail.html">点击查看详情</a>',
+        "<a href='switchDetail.html?switchId=" + switchId + "'>点击查看详情</a>"
         // '<button  type="button" class="RoleOfSeeSwitchDetail btn btn-primary btn-xs">点击查看详情</button>'
         ].join('');
 }
 
+
 //----网络信息overview-----
 //交换机列表
-
 $('#switchTable').bootstrapTable({
 
     // url: "url",                      //请求后台的URL（*）
@@ -143,6 +169,15 @@ $('#switchTable').bootstrapTable({
             "flow_count": 3
         }]
 })
+//接收一个值
+function getSwitchId(){
+    var result;
+    var url=window.location.search; //获取url中"?"符后的字串
+    if(url.indexOf("?")!=-1){
+        result = url.substr(url.indexOf("=")+1);
+    }
+    return result;
+}
 
 
 
@@ -253,6 +288,10 @@ $('#hostTable').bootstrapTable({
 
 
 //-----交换机详情-------
+$(function(){
+    $("#showSwitchId").html(getSwitchId());
+})
+
 //交换机端口列表
 $('#portTable').bootstrapTable({
 
