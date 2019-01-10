@@ -492,10 +492,6 @@
           <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
         </div>
 
-
-
-
-
       <!-- topo-->
         <div class="card mb-3">
           <div class="card-header">
@@ -508,78 +504,73 @@
         </div>
 
 
+        <!--网络信息overview-->
+          <!--  Switch Table  -->
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fas fa-table"></i>
+              交换机列表</div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="switchTable" width="100%" cellspacing="0">
+                </table>
+              </div>
+            </div>
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          </div>
 
-        <!--  Ports Tables  -->
+          <!--  Host Tables -->
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fas fa-table"></i>
+              主机列表</div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="hostTable" width="100%" cellspacing="0"></table>
+              </div>
+            </div>
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          </div>
+
+      <!--交换机详情-->
+          <div class="alert alert-primary" role="alert">
+            正在查看交换机{<b>00000000000002</b>}的详情
+          </div>
+          <!-- Flow Table  -->
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fas fa-table"></i>
+              流表</div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="flowTable" width="100%" cellspacing="0"></table>
+              </div>
+            </div>
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          </div>
+
+          <!--  Ports Table  -->
         <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-table"></i>
-            交换机端口</div>
+            交换机端口列表</div>
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-bordered" id="portTable" width="100%" cellspacing="0">
-              </table>
+              <table class="table table-bordered" id="portTable" width="100%" cellspacing="0"></table>
             </div>
           </div>
           <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
         </div>
 
-        <!--  Ports Tables  -->
-        <div class="card mb-3">
-          <div class="card-header">
-            <i class="fas fa-table"></i>
-            主机列表</div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table table-bordered" id="hostTable" width="100%" cellspacing="0">
-              </table>
-            </div>
-          </div>
-          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-        </div>
 
-        <!-- Flow Tables  -->
+        <!-- Traffic info Table  -->
         <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-table"></i>
-            流表</div>
+            流量信息</div>
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-bordered" id="flowTable" width="100%" cellspacing="0">
-              </table>
-            </div>
-          </div>
-          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-        </div>
-
-        <!-- Switch Tables  -->
-        <div class="card mb-3">
-          <div class="card-header">
-            <i class="fas fa-table"></i>
-            Switch Table</div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table table-bordered" id="portTable-bandwidth" width="100%" cellspacing="0">
-                <thead>
-                <tr>
-                  <th>端口ID</th>
-                  <th>接收包数</th>
-                  <th>传输包数</th>
-                  <th>接收字节</th>
-                  <th>传输字节</th>
-                  <th>持续时间(s)</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td>Tiger Nixon</td>
-                  <td>System Architect</td>
-                  <td>Edinburgh</td>
-                  <td>Tiger Nixon</td>
-                  <td>System Architect</td>
-                  <td>Edinburgh</td>
-                </tr>
-                </tbody>
-              </table>
+              <table class="table table-bordered" id="trafficTable" width="100%" cellspacing="0"></table>
             </div>
           </div>
           <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
@@ -592,7 +583,7 @@
         <footer class="sticky-footer">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
-              <span>Copyright ©ZhangLin  bupt 2018 </span>
+              <span>Copyright ©Zhang Lin @BUPT  2018 </span>
             </div>
           </div>
         </footer>
@@ -613,15 +604,15 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <h5 class="modal-title" id="exampleModalLabel">确定退出吗？</h5>
             <button class="close" type="button" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">×</span>
             </button>
           </div>
           <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
           <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">取消</button>
+            <a class="btn btn-primary" href="login.html">退出</a>
           </div>
         </div>
       </div>
