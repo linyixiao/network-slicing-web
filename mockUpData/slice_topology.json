@@ -1,0 +1,89 @@
+{
+     "nodes": [
+         {
+             "name": "car",
+             "vmType": "server",
+             "image": "image/car.svg"
+         }, {
+             "name": "node1",
+             "vmType": "node",
+             "image": "image/wifi.ico"
+         }, {
+             "name": "vnf2",
+             "vmType": "node",
+             "image": "image/wifi.ico"
+         }, {
+             "name": "node3",
+             "vmType": "node",
+             "image": "image/wifi.ico"
+         }, {
+             "name": "node4",
+             "vmType": "node",
+             "image": "image/router.svg"
+         }, {
+             "name": "vnf5",
+             "vmType": "node",
+             "image": "image/router.svg"
+         }, {
+             "name": "vnf6",
+             "vmType": "node",
+             "image": "image/wifi.ico"
+         }, {
+             "name": "node7",
+             "vmType": "node",
+             "image": "image/router.svg"
+         }, {
+             "name": "vnf8",
+             "vmType": "node",
+             "image": "image/wifi.ico"
+         }, {
+             "name": "server",
+             "vmType": "server",
+             "image": "image/host_server.ico"
+         }
+
+     ],
+     "lines": [
+         {
+             "source": 0,
+             "target": 1,
+             "active": true,
+             "sliceId": null
+         }, {
+             "source": 1,
+             "target": 2,
+             "active": true,
+             "sliceId": "1"
+         }, {
+             "source": 1,
+             "target": 4,
+             "active": false,
+             "sliceId": "2"
+         }, {
+             "source": 2,
+             "target": 5,
+             "active": false,
+             "sliceId": "1"
+         }, {
+             "source": 4,
+             "target": 7,
+             "active": false,
+             "sliceId": "2"
+         }, {
+             "source": 5,
+             "target": 8,
+             "active": false,
+             "sliceId": "1"
+         }, {
+             "source": 7,
+             "target": 8,
+             "active": false,
+             "sliceId": "2"
+         }, {
+             "source": 8,
+             "target": 9,
+             "active": false,
+             "sliceId": null
+         }
+     ]
+ }

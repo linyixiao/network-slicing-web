@@ -1,0 +1,26 @@
+ [
+{
+"terminal_id": "t01",
+"name": "MobilePhone",
+"type": "Delay sensitive",
+"selected_slice": "eMBB_slice"
+},
+{
+"terminal_id": "t02",
+"name": "AR/VR",
+"type": "Delay sensitive",
+"selected_slice": "URLLC_slice"
+},
+{
+"terminal_id": "t03",
+"name": "Car",
+"type": "Delay sensitive",
+"selected_slice": "URLLC_slice"
+},
+{
+"terminal_id": "t04",
+"name": "Video surveillance equipment",
+"type": "Delay sensitive",
+"selected_slice": "eMBB_slice"
+}
+]

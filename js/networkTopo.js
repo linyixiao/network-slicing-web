@@ -1,63 +1,24 @@
-var data = {
-    "nodes": [
-        {
-            "name": "node-122",
-            "vmType": "server",
-            // "image": "img/server_node.png"
-            "image": "image/hosting_server.ico"
-        }, {
-            "name": "dst1",
-            "vmType": "1",
-            // "image": "img/vnf_node.png"
-            "image": "image/host.ico"
-        }, {
-            "name": "vnf1",
-            "vmType": "2",
-            // "image": "img/vnf_node.png"
-            "image": "image/host.ico"
-        }, {
-            "name": "node-123",
-            "vmType": "server",
-            // "image": "img/server_node.png"
-            "image": "image/wifi.ico"
-        }, {
-            "name": "vnf2",
-            "vmType": null,
-            // "image": "img/vnf_node.png"
-            "image": "image/router.svg"
-        }, {
-            "name": "src1",
-            "vmType": "0",
-            // "image": "img/vnf_node.png"
-            "image": "image/router.svg"
-        }
+var baselUrl = "http://127.0.0.1:7001/api"
 
-    ],
-    "lines": [
-        {
-            "source": 0,
-            "target": 1,
-            "active": true
-        }, {
-            "source": 0,
-            "target": 2,
-            "active": true
-        }, {
-            "source": 0,
-            "target": 3,
-            "active": false
-        }, {
-            "source": 3,
-            "target": 4,
-            "active": false
-        }, {
-            "source": 3,
-            "target": 5,
-            "active": true
+function load_val(){
+    var result='';
+    $.ajax({
+        dataType:'json',
+        // url : baselUrl + '/networkInformation/network_topology',
+        url : 'mockUpData/network_topology.json',
+        async:false,
+        success : function(data){
+            //alert(JSON.stringify(data))
+            result = data;
         }
-    ]
-};
+    });
+    return result;
+}
+
+var data = load_val();
+
 renderTp(data.nodes,data.lines);
+
 function renderTp(nodes,edges){
     // var width  = 500;
     // var height = 300;
@@ -69,8 +30,8 @@ function renderTp(nodes,edges){
     var height = 500;
     var img_w = 50;
     var img_h = 50;
-    var text_dx = -40;
-    var text_dy = 40;
+    var text_dx = -20;
+    var text_dy = 20;
     var drag = d3.behavior.drag()
         .origin(function(d) {
             return d;
@@ -80,7 +41,7 @@ function renderTp(nodes,edges){
         .on("dragend", dragended);
     var zoom=d3.behavior.zoom()
         .scaleExtent([-10,10]).on("zoom",zoomed);
-    var svg = d3.select("#tpContainer").append("svg")
+    var svg = d3.select("#tpContainer_network").append("svg")
         .attr("width",width).attr("height",height)
         .style("pointer-events", "all").call(zoom);
     var g   = svg.append("g").attr("class","graphCon");
@@ -105,11 +66,11 @@ function renderTp(nodes,edges){
         })
         .attr("xlink:href",function(d){
             if(d.vmType=="0"||d.vmType=="1"){
-                // return "img/active_src_node.png";
-                return "image/hosting_server.ico";
+                return d.image;
+                // return "image/host_server.ico";
             }else if(d.vmType=="2"){
-                // return "img/active_vnf_node.png";
-                return "image/hosting_server.ico";
+                return d.image;
+                // return "image/host_server.ico";
             }
             return d.image;
         }).call(drag);
@@ -131,10 +92,10 @@ function renderTp(nodes,edges){
         .linkDistance(function(d){
             if(d.source.vmType=="server"&&
                 d.target.vmType=="server"){
-                return 200;
+                return 400;
             }
             // return 40;
-            return 60;
+            return 100;
         })
         .charge(-700).start().on("tick", function(){
             //限制结点的边界

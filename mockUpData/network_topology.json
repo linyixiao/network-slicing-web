@@ -1,0 +1,99 @@
+{
+     "nodes": [
+         {
+             "name": "src1",
+             "vmType": "server",
+             "image": "image/host_server.ico"
+         },{
+             "name": "switch1",
+             "vmType": "switch",
+             "image": "image/router.svg"
+         }, {
+             "name": "switch2",
+             "vmType": "switch",
+             "image": "image/router.svg"
+         }, {
+             "name": "switch3",
+             "vmType": "switch",
+             "image": "image/router.svg"
+         }, {
+             "name": "switch4",
+             "vmType": "switch",
+             "image": "image/router.svg"
+         }, {
+             "name": "switch5",
+             "vmType": "switch",
+             "image": "image/router.svg"
+         }, {
+             "name": "switch6",
+             "vmType": "switch",
+             "image": "image/router.svg"
+         }, {
+             "name": "switch7",
+             "vmType": "switch",
+             "image": "image/router.svg"
+         }, {
+             "name": "switch8",
+             "vmType": "switch",
+             "image": "image/router.svg"
+         }, {
+            "name": "dst1",
+            "vmType": "server",
+            "image": "image/host_server.ico"}
+     ],
+     "lines": [
+         {
+             "source": 0,
+             "target": 1,
+             "active": true
+         }, {
+             "source": 1,
+             "target": 2,
+             "active": true
+         }, {
+             "source": 1,
+             "target": 4,
+             "active": true
+         }, {
+             "source": 1,
+             "target": 6,
+             "active": true
+         },{
+             "source": 2,
+             "target": 3,
+             "active": true
+         }, {
+             "source": 2,
+             "target": 5,
+             "active": true
+         }, {
+             "source": 3,
+             "target": 8,
+             "active": true
+         }, {
+             "source": 4,
+             "target": 5,
+             "active": true
+         }, {
+             "source": 4,
+             "target": 7,
+             "active": true
+         }, {
+             "source": 5,
+             "target": 8,
+             "active": false
+         }, {
+             "source": 6,
+             "target": 7,
+             "active": false
+         }, {
+             "source": 7,
+             "target": 8,
+             "active": true
+         }, {
+             "source": 8,
+             "target": 9,
+             "active": true
+         }
+     ]
+ }

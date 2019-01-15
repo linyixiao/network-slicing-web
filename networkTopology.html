@@ -88,7 +88,7 @@
 
   <!-- Sidebar -->
   <ul class="sidebar navbar-nav">
-    <li class="nav-item active">
+    <li class="nav-item">
       <a class="nav-link" href="index.html">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Dashboard</span>
@@ -103,7 +103,7 @@
       </a>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item active">
       <a class="nav-link" href="networkTopology.html"  role="button"  aria-haspopup="true" aria-expanded="false">
         <i class="fas fa-fw fa-chart-area"></i>
         <span>物理网络拓扑</span>
@@ -146,20 +146,34 @@
   <div id="content-wrapper">
 
     <div class="container-fluid">
+
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="index.html">Dashboard</a>
+          <a href="#">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">404 Error</li>
+        <li class="breadcrumb-item active">网络拓扑</li>
       </ol>
 
-      <!-- Page Content -->
-      <h1 class="display-1">404</h1>
-      <p class="lead">Page not found. You can
-        <a href="javascript:history.back()">go back</a>
-        to the previous page, or
-        <a href="index.html">return home</a>.</p>
+
+      <!--数据区域-->
+
+      <!--  切片列表  -->
+
+      <!-- network topo-->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fas fa-chart-area"></i>
+          物理网络拓扑</div>
+        <div class="card-body">
+          <div class="alert alert-info" role="alert">
+            <a href="networkInfo.html" class="alert-link">点此查看</a>拓扑元素信息详情.
+          </div>
+          <div id="tpContainer_network"></div>
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+      </div>
+
 
     </div>
     <!-- /.container-fluid -->
@@ -231,7 +245,7 @@
 <script src="js/task.js"></script>
 <script src="js/moudle.js"></script>
 <script src="js/networkTopo.js"></script>
-<script src="js/sliceTopo.js"></script>
+
 
 
 

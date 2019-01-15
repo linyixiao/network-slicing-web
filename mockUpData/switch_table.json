@@ -1,0 +1,45 @@
+[{
+         "dpid": "0000000000000001",
+         "packet_count": 92319,
+         "byte_count": 14092830,
+         "flow_count": 3
+     },{
+         "dpid": "0000000000000002",
+         "packet_count": 16784,
+         "byte_count": 14092236,
+         "flow_count": 5
+     },{
+         "dpid": "0000000000000003",
+         "packet_count": 56745,
+         "byte_count": 25092831,
+         "flow_count": 3
+     },{
+         "dpid": "0000000000000004",
+         "packet_count": 34675,
+         "byte_count": 30092835,
+         "flow_count": 2
+     }, {
+         "dpid": "0000000000000005",
+         "packet_count": 89023,
+         "byte_count": 41092840,
+         "flow_count": 6
+     },
+    {
+        "dpid": "0000000000000006",
+        "packet_count": 59045,
+        "byte_count": 32462840,
+        "flow_count": 3
+    },
+    {
+        "dpid": "0000000000000007",
+        "packet_count": 45423,
+        "byte_count": 35256322,
+        "flow_count": 5
+    },
+    {
+        "dpid": "0000000000000008",
+        "packet_count": 13453,
+        "byte_count": 56324654,
+        "flow_count": 7
+    }
+]

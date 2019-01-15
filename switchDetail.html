@@ -1,313 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <title>NetworkSlicing - Dashboard</title>
-    <link rel="icon" href="image/logo3.jpg" type="img/x-ico" />
-    <!-- Bootstrap core CSS-->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <title>NetworkSlicing - Dashboard</title>
+  <link rel="icon" href="image/logo.jpg" type="img/x-ico" />
+  <!-- Bootstrap core CSS-->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
-    <!-- Page level plugin CSS-->
-    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <!-- Page level plugin CSS-->
+  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="vendor/bootstrap-table/bootstrap-table.css">
+  <link rel="stylesheet" href="vendor/bootstrap-table/bootstrap-table.css">
 
-    <!-- Custom styles for this template-->
-    <link href="css/sb-admin.css" rel="stylesheet">
+  <!-- Custom styles for this template-->
+  <link href="css/network-slicing.css" rel="stylesheet">
 
-  </head>
-
-
+</head>
 
 
-  <body id="page-top">
-
-    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-
-      <img class="rounded-circle" width="75px" height="75px" src = "image/logo3.jpg">
-
-      <a class="navbar-brand m-2" href="index.html">5G网络切片原型系统 </a>
-      <span class="badge badge-light">V1.0</span>
-      <!--<p class="bg-primary" >V1.0 </p>-->
-
-      <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
-        <i class="fas fa-bars"></i>
-      </button>
-
-      <button type="button" class="btn btn-secondary btn-outline-light ml-auto mr-0 mr-md-3 my-2 my-md-0" data-toggle="tooltip" data-placement="top" title="网络已连接">已连接
-      </button>
-
-      <!-- Navbar Search -->
-      <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="搜索..." aria-label="Search" aria-describedby="basic-addon2">
-          <div class="input-group-append">
-            <button class="btn btn-primary" type="button">
-              <i class="fas fa-search"></i>
-            </button>
-          </div>
-        </div>
-      </form>
-
-      <!-- Navbar -->
-      <ul class="navbar-nav ml-auto ml-md-0">
-        <!--<li class="nav-item dropdown no-arrow mx-1">-->
-          <!--<a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-            <!--<i class="fas fa-bell fa-fw"></i>-->
-            <!--<span class="badge badge-danger">9+</span>-->
-          <!--</a>-->
-          <!--<div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">-->
-            <!--<a class="dropdown-item" href="#">Action</a>-->
-            <!--<a class="dropdown-item" href="#">Another action</a>-->
-            <!--<div class="dropdown-divider"></div>-->
-            <!--<a class="dropdown-item" href="#">Something else here</a>-->
-          <!--</div>-->
-        <!--</li>-->
-        <!--<li id="nav-github">-->
-          <!--<a href="https://github.com/ecomfe/echarts" target="_blank">-->
-            <!--<img src="http://www.echartsjs.com/images/github.png" width="18">-->
-          <!--</a>-->
-        <!--</li>-->
 
 
-        <li class="nav-item dropdown no-arrow mx-1">
-          <a class="nav-link " href="https://github.com/linyixiao/network-slicing-web"  role="button" aria-haspopup="true" aria-expanded="false" target="_blank">
-            <img src="http://www.echartsjs.com/images/github.png" width="18">
-            <span class="badge badge-danger">2</span>
-          </a>
-        </li>
+<body id="page-top">
 
-        <li class="nav-item dropdown no-arrow">
-          <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-user-circle fa-fw"></i>
-          </a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-            <a class="dropdown-item" href="#">设置</a>
-            <!--<a class="dropdown-item" href="#">Activity Log</a>-->
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">退出登录</a>
-          </div>
-        </li>
-      </ul>
+<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    </nav>
+  <img class="rounded-circle" width="75px" height="75px" src = "image/logo.jpg">
 
+  <a class="navbar-brand m-2" href="index.html">5G网络切片演示系统 </a>
+  <span class="badge badge-light">V2.0</span>
+  <!--<p class="bg-primary" >V1.0 </p>-->
 
-    <div id="wrapper">
+  <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+    <i class="fas fa-bars"></i>
+  </button>
 
-      <!-- Sidebar -->
-      <ul class="sidebar navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span>
-          </a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Pages</span>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-            <h6 class="dropdown-header">Login Screens:</h6>
-            <a class="dropdown-item" href="login.html">Login</a>
-            <a class="dropdown-item" href="register.html">Register</a>
-            <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
-            <div class="dropdown-divider"></div>
-            <h6 class="dropdown-header">Other Pages:</h6>
-            <a class="dropdown-item" href="404.html">404 Page</a>
-            <a class="dropdown-item" href="blank.html">Blank Page</a>
-          </div>
-        </li>
+  <!--<button type="button" class="btn btn-secondary btn-outline-light ml-auto mr-0 mr-md-3 my-2 my-md-0" data-toggle="tooltip" data-placement="top" title="网络已连接">控制器已连接</button>-->
 
-        <li class="nav-item">
-          <a class="nav-link" href="networkInfo.html"  role="button"  aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-fw fa-align-center"></i>
-            <span>物理网络信息</span>
-            <!--host-->
-            <!--switches-->
-            <!--traffic-->
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="networkITopology.html"  role="button"  aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-fw fa-align-center"></i>
-            <span>物理网络拓扑</span>
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="sliceManagement.html">
-            <i class="fas fa-fw fa-cloud"></i>
-            <span>切片管理</span></a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="sliceSelect.html">
-            <i class="fas fa-fw fa-cloud"></i>
-            <span>切片选择</span></a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="introduction.html">
-            <i class="fas fa-fw fa-cloud"></i>
-            <span>使用方法</span></a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="accessNetworkInstance.html">
-            <i class="fas fa-fw fa-cloud"></i>
-            <span>接入网实例</span></a>
-        </li>
-
-      </ul>
-
-
-      <!--正文区域-->
-      <div id="content-wrapper">
-
-        <div class="container-fluid">
-
-          <!-- Breadcrumbs-->
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-              <a href="#">Dashboard</a>
-            </li>
-            <li class="breadcrumb-item active">
-              <a href="networkInfo.html">网络信息</a>
-            </li>
-            <li class="breadcrumb-item ">交换机详情</li>
-          </ol>
-
-
-          <!--数据区域-->
-
-          <!--交换机详情-->
-
-          <div class="alert alert-primary" role="alert">
-            正在查看交换机{<b> <span id="showSwitchId"></span></b>}的详情...
-          </div>
-
-          <!-- Flow Table  -->
-          <div class="card mb-3">
-            <div class="card-header">
-              <i class="fas fa-table"></i>
-              流表</div>
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="flowTable" width="100%" cellspacing="0"></table>
-              </div>
-            </div>
-            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-          </div>
-
-          <!--  Ports Table  -->
-        <div class="card mb-3">
-          <div class="card-header">
-            <i class="fas fa-table"></i>
-            交换机端口列表</div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table table-bordered" id="portTable" width="100%" cellspacing="0"></table>
-            </div>
-          </div>
-          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-        </div>
-
-
-        <!-- Traffic info Table  -->
-        <div class="card mb-3">
-          <div class="card-header">
-            <i class="fas fa-table"></i>
-            流量信息</div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table table-bordered" id="trafficTable" width="100%" cellspacing="0"></table>
-            </div>
-          </div>
-          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-        </div>
-
-        </div>
-        <!-- /.container-fluid -->
-
-        <!-- Sticky Footer -->
-        <footer class="sticky-footer">
-          <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-              <span>Copyright ©Zhang Lin @BUPT  2018 </span>
-            </div>
-          </div>
-        </footer>
-
-      </div>
-      <!-- /.content-wrapper -->
-
-    </div>
-    <!-- /#wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">确定退出吗？</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">取消</button>
-            <a class="btn btn-primary" href="login.html">退出</a>
-          </div>
-        </div>
+  <!-- Navbar Search -->
+  <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="搜索..." aria-label="Search" aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <button class="btn btn-primary" type="button" onclick="window.open('https://www.baidu.com/','_blank');"  >
+          <i class="fas fa-search"></i>
+        </button>
       </div>
     </div>
+  </form>
+
+  <!-- Navbar -->
+  <ul class="navbar-nav ml-auto ml-md-0">
+
+    <li class="nav-item dropdown no-arrow mx-1">
+      <a class="nav-link " href="https://github.com/linyixiao/network-slicing-web"  role="button" aria-haspopup="true" aria-expanded="false" target="_blank">
+        <img src="http://www.echartsjs.com/images/github.png" width="18">
+        <span class="badge badge-danger">2</span>
+      </a>
+    </li>
+
+    <li class="nav-item dropdown no-arrow">
+      <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-user-circle fa-fw"></i>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+        <a class="dropdown-item" href="#">未定义</a>
+        <!--<a class="dropdown-item" href="#">Activity Log</a>-->
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">退出登录</a>
+      </div>
+    </li>
+  </ul>
+
+</nav>
+
+
+<div id="wrapper">
+
+  <!-- Sidebar -->
+  <ul class="sidebar navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="index.html">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>Dashboard</span>
+      </a>
+    </li>
+
+    <li class="nav-item active">
+      <a class="nav-link" href="networkInfo.html"  role="button"  aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-fw fa-align-center"></i>
+        <span>物理网络信息</span>
+
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="networkTopology.html"  role="button"  aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-fw fa-chart-area"></i>
+        <span>物理网络拓扑</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="sliceManagement.html">
+        <i class="fas fa-fw fa-cloud"></i>
+        <span>切片管理</span></a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="sliceSelect.html">
+        <i class="fas fa-fw fa-columns"></i>
+        <span>切片选择</span></a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="scliceTopology.html">
+        <i class="fas fa-fw fa-map"></i>
+        <span>切片拓扑</span></a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="accessNetworkInstance.html">
+        <i class="fas fa-fw fa-tree"></i>
+        <span>接入网场景</span></a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="introduction.html">
+        <i class="fas fa-fw fa-info"></i>
+        <span>使用方法</span></a>
+    </li>
+  </ul>
+
+
+  <!--正文区域-->
+  <div id="content-wrapper">
+
+    <div class="container-fluid">
+
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="networkInfo.html">网络信息</a>
+        </li>
+        <li class="breadcrumb-item active">交换机详情</li>
+      </ol>
+
+      <!--数据区域-->
+      <!--交换机详情-->
+      <div class="alert alert-primary" role="alert">
+        正在查看交换机{<b> <span id="showSwitchId"></span></b>}的详情...
+      </div>
+      <!-- Flow Table  -->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fas fa-table"></i>
+          流表</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="flowTable" width="100%" cellspacing="0"></table>
+          </div>
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+      </div>
+
+      <!--  Ports Table  -->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fas fa-table"></i>
+          端口列表</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="portTable" width="100%" cellspacing="0"></table>
+          </div>
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+      </div>
+
+
+      <!-- Traffic info Table  -->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fas fa-table"></i>
+          端口流量信息</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="portTrafficTable" width="100%" cellspacing="0"></table>
+          </div>
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+      </div>
+
     </div>
-  </body>
+    <!-- /.container-fluid -->
+
+    <!-- Sticky Footer -->
+    <footer class="sticky-footer">
+      <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+          <span>Copyright ©Zhang Lin @BUPT  2018 </span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  <!-- /.content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+  <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">确定退出吗？</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">确定请选择"退出".</div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">取消</button>
+        <a class="btn btn-primary" href="login.html">退出</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
 </html>
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap core JavaScript-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Page level plugin JavaScript-->
-    <script src="vendor/chart.js/Chart.min.js"></script>
-    <script src="vendor/datatables/jquery.dataTables.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
-    <script src="vendor/d3/d3.js"></script>
-    <!--<script src ="http://d3js.org/d3.v3.min.js"></script>-->
-    <script src="vendor/bootstrap-table/bootstrap-table.js"></script>
-    <!-- put your locale files after bootstrap-table.js -->
-    <script src="vendor/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<!-- Page level plugin JavaScript-->
+<script src="vendor/chart.js/Chart.min.js"></script>
+<script src="vendor/datatables/jquery.dataTables.js"></script>
+<script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+<script src="vendor/d3/d3.js"></script>
+<!--<script src ="http://d3js.org/d3.v3.min.js"></script>-->
+<script src="vendor/bootstrap-table/bootstrap-table.js"></script>
+<!-- put your locale files after bootstrap-table.js -->
+<script src="vendor/bootstrap-table/bootstrap-table-zh-CN.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin.min.js"></script>
+<!-- Custom scripts for all pages-->
+<script src="js/sb-admin.min.js"></script>
 
-    <!-- Demo scripts for this page-->
-    <script src="js/demo/datatables-demo.js"></script>
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/myJob.js"></script>
-    <script src="js/topology.js"></script>
+<!-- Demo scripts for this page-->
+<script src="js/demo/datatables-demo.js"></script>
+<script src="js/demo/chart-area-demo.js"></script>
+<script src="js/task.js"></script>
+<script src="js/moudle.js"></script>
+<script src="js/networkTopo.js"></script>
+<script src="js/sliceTopo.js"></script>
+
+
 
 
 

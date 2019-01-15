@@ -1,0 +1,26 @@
+[
+  {
+    "slice_id": "001",
+    "name": "eMBB_slice",
+    "create_time": "2019-01-07 09:00:00",
+    "nodeList": ["s1","s2","s3"],
+    "priority": 2,
+    "status":"Running"
+  },
+  {
+    "slice_id": "002",
+    "name": "URLLC_slice",
+    "create_time": "2019-01-07 09:00:00",
+    "nodeList": ["s4","s5"],
+    "priority": 1,
+    "status":"Not running"
+  },
+  {
+    "slice_id": "003",
+    "name": "mMTC_slice",
+    "create_time": "2019-01-07 09:00:00",
+    "nodeList": ["s5","s7","s8"],
+    "priority": 3,
+    "status":"Running"
+  }
+]
